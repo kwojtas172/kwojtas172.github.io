@@ -4,7 +4,7 @@ import photo from "../photos/soccer.jpg";
 export default class ProjectSoccerApp extends Component {
     render() {
         return (
-            <section className={this.props.class ? this.props.class : `hidden`}>
+            <section className={this.props.class ? this.props.class : `hidden`} id="projects">
                 <div className="main-content_project_container-img">
                     <img src={photo} alt="soccer" className="project-img right-img" />
                     <a className="main-content_project_link live live-right" href="https://kwojtas172.github.io/scores-app" target="_blank">Live</a>

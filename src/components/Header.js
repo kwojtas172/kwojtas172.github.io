@@ -63,9 +63,9 @@ class Header extends Component {
                 </div>
                 <nav className="header-wrapper_nav">
                     <ul className="header-wrapper_nav_list">
-                        <li><a>About me</a></li>
-                        <li><a>My projects</a></li>
-                        <li><a>Contact</a></li>
+                        <li><a href="#about-me">About me</a></li>
+                        <li><a href="#projects">My projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
             </header>

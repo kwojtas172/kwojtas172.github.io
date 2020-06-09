@@ -4,7 +4,7 @@ import Form from "./Form";
 export default class Contact extends Component {
     render() {
         return (
-            <section className={this.props.class ? this.props.class : `hidden`}>
+            <section className={this.props.class ? this.props.class : `hidden`} id="contact">
                 <div className={this.props.class ? `main-content_contact_content` : ``}>
                     <div className="main-content_contact_content_title">
                         <i class="fas fa-id-card"></i>

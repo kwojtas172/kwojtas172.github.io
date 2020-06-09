@@ -26,7 +26,7 @@ export default class AboutMe extends Component {
     
     render() {
         return (
-            <section className={`main-content_about-me ${this.state.opacityClass}`}>
+            <section className={`main-content_about-me ${this.state.opacityClass}`} id="about-me">
                 <img src={photo} alt="cup of coffee and laptop" />
                 <div className="main-content_about-me_wrapper">
                     <h2>
