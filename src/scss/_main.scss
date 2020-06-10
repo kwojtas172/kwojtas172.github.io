@@ -237,15 +237,6 @@ i {
     padding: 0.25rem;
   }
 
-  input[type=submit] {
-    cursor: pointer;
-
-    &:hover {
-      background-color: $dark-color;
-      color: lighten($dark-color, 50%);
-    }
-  }
-
   textarea {
     height: 8rem;
     width: 100%;
@@ -333,14 +324,28 @@ a {
 
 .main-content_contact_content_form {
   // text-align: center;
+  width: 25rem;
+  margin: 1rem auto;
+
   input, textarea {
     display: block;
     margin: 0.25rem auto;
+    width: 25rem;
     
   }
 
   textarea {
-    width: auto;
+    width: 100%;
     height: 15rem;
+  }
+
+  input[type=submit] {
+    cursor: pointer;
+    width: 3rem;
+
+    &:hover {
+      background-color: $dark-color;
+      color: lighten($dark-color, 50%);
+    }
   }
 }

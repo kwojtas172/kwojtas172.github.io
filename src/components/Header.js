@@ -8,20 +8,22 @@ class Header extends Component {
             myPortf: "",
             counter: 0,
             position: "",
-            class: ""
+            class: "",
+            display: "",
+            displayHideMenu: "none"
         }
     }
 
     componentDidMount() {
         this.toCompleteWord = setInterval(() => {
                 const word = "My portfolio";
-                if(window.innerHeight >=720) {
+                if(window.innerWidth >=720) {
                     this.setState({
                     myPortf: this.state.myPortf + word[this.state.counter],
                     counter: this.state.counter + 1
                     })
                 }
-                if(window.innerHeight < 720) {
+                if(window.innerWidth < 720) {
                     this.setState({
                         myPortf: word,
                         // counter: this.state.counter + 1
@@ -50,9 +52,23 @@ class Header extends Component {
                 console.log(this.state.position)
             }
 
-            window.addEventListener("scroll", this.handleScroll)
+            this.changeDisplay = () => {
+                this.setState({
+                    display: window.innerWidth < 720 ? "none" : "",
+                    displayHideMenu: window.innerWidth < 720 ? "block" : "none"
+                })
+            }
+
+            window.addEventListener("scroll", this.handleScroll);
+            window.addEventListener('resize', this.changeDisplay);
         
     }
+
+        handleClick = () => {
+            this.setState({
+                display: this.state.display === "none" ? "block" : "none"
+            })
+        }
     
     render() {
         return (
@@ -62,7 +78,10 @@ class Header extends Component {
                     {console.log(window.innerHeight)}
                 </div>
                 <nav className="header-wrapper_nav">
-                    <ul className="header-wrapper_nav_list">
+                    <span className="hide-menu-wrapper" onClick={this.handleClick}>
+                    <span className="hide-menu" style={{display: this.state.displayHideMenu}}></span>
+                    </span>
+                    <ul className="header-wrapper_nav_list" style={{display: this.state.display}}>
                         <li><a href="#about-me">About me</a></li>
                         <li><a href="#projects">My projects</a></li>
                         <li><a href="#contact">Contact</a></li>
