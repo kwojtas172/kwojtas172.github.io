@@ -51,7 +51,7 @@ export default class Main extends Component {
                 })
             }
 
-            if(this.state.position > 2600) {
+            if(this.state.position > 2650) {
                 this.setState({
                     isContact: "main-content_contact"
                 })

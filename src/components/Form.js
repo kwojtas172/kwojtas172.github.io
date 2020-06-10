@@ -38,7 +38,7 @@ export default class Form extends Component {
         return (
             <form className="main-content_contact_content_form" onSubmit={this.handleSubmit}>
                 {this.state.isSubmit && this.state.name.length < 2 && <p className="main-content_contact_content_form_wrong">Your name is too short!</p>}
-                {this.state.isSubmit && (this.state.email.length < 3 || this.state.email.indexOf("@") === -1) && <p className="main-content_contact_content_form_wrong">Your e-mail address is too shor or does not containg '@'!</p>}
+                {this.state.isSubmit && (this.state.email.length < 3 || this.state.email.indexOf("@") === -1) && <p className="main-content_contact_content_form_wrong">Your e-mail address is too short or does not containg '@'!</p>}
                 {this.state.isSubmit && this.state.text.length < 4 && <p className="main-content_contact_content_form_wrong">Your message is too short!</p>}
                 {this.state.isSuccses && <p className="main-content_contact_content_form_good">Your message has been sent successfully!</p>}
 
