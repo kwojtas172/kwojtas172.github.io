@@ -44,7 +44,7 @@ export default class Form extends Component {
 
                 <input type="text" value={this.state.name} onChange={e => this.setState({name: e.target.value, isSuccses: false})} placeholder="enter your name"/>
                 <input type="email" value={this.state.email} onChange={e => this.setState({email: e.target.value, isSuccses: false})} placeholder="enter your e-mail" />
-                <textarea value={this.state.text} onChange={e => this.setState({text: e.target.value, isSuccses: false})} />
+                <textarea value={this.state.text} placeholder="enter your message" onChange={e => this.setState({text: e.target.value, isSuccses: false})} />
                 <input type="submit" value="Send" />
                 {/* {} */}
             </form>
