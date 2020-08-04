@@ -1,6 +1,7 @@
 @keyframes opacityAnim {
     0% {
       opacity: 0;
+      transform: skew(-45deg, 10deg)
     }
   
     50% {
@@ -9,6 +10,7 @@
   
     100% {
       opacity: 1;
+      transform: skew(0, 0)
     }
   }
 
