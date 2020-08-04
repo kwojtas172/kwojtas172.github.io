@@ -1,155 +1,79 @@
-@media (min-width: 720px) {
-    .header-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 6rem;
-    width: 100%;
-    position: sticky;
-    background-color: darken($light-color, 20%);
-    color: $dark-color;    
+.header {
+    height: 10rem;
 }
 
-.fixed {
-    // position: sticky;
-    top: 0;
-    opacity: 0.85;
-    transition: 0.4s 0.4s;
-    z-index: 9;
-    
-
-    .header-wrapper_logo {
-        h1, p {
-        font-size: 1.2rem;
-        // margin: 0;
-       }
-     }
-
-     .header-wrapper_nav {
-     .header-wrapper_nav_list {
-
-        
-        
-        li {
-            display: flex;
-            flex-direction: row;
-            // margin: 0;
-        a {
-            font-size: 1.2rem;
-            // margin: 0;
-        }
-    }
-    }}
+.header__nav {
+    height: 100%;
 }
 
-header.header-wrapper.fixed {
-    height: 2.5rem;
-    padding: 0;
-    min-height: 0;
-    
-}
-
-
-.header-wrapper_logo {
-    margin-left: 2rem;
-
-    h1 {
-        font-style: italic;
-        cursor: pointer;
-        font-size: 3.5rem;
-
-        &:hover {
-            color: lighten($dark-color, 15%);
-        }
-    }
-    
-}
-
-.header-wrapper_nav {
-    margin-right: 2rem;
-
-    .header-wrapper_nav_list {
-        display: flex;
-        list-style: none;
-
-        li {
-            margin: 1rem;
-
-            a {
-                cursor: pointer;
-                transition: 0.4;
-                font-size: 2rem;
-
-                &:hover {
-                    color: lighten($dark-color, 15%);
-                }
-            }
-        }
-    }
-}
-}
-
-@media (max-width: 719px) {
-    .header-wrapper {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background-color: darken($light-color, 20%);
-    color: $dark-color;
-    position: sticky;
-    top: 0;
-    justify-content: center;
-    align-items: center;
-
-    ul {
-        list-style: none;
-    }
-}
-
-}
-.hide-menu {
-    width: 1.5rem;
+.header__nav__menu {
+    display: block;
+    width: 3rem;
     height: 0.15rem;
-    background-color: #ffffff;
-    position: relative;
-    // text-align: center;
-    margin: 1rem auto;
-    // cursor: pointer;
-
-    // &:hover {
-    //     background-color: $lightest-color;
-    // }
-
-    &:before, &:after {
-        content: "";
-        width: 100%;
-        height: 100%;
-        left: 0;
-        display: blocks;
-        position: absolute;
-        background-color: #ffffff;
-    }
-
-    &:before {
-        top: -0.5rem;
-    }
-
-    &:after {
-        top: 0.5rem;
-    }
+    background-color: $light-color;
+    margin-right: 0.5rem;
+    position: absolute;
+    top: 0.75rem;
+    right: 0;
 }
 
-.hide-menu-wrapper {
+.header__nav__menu::before {
+    display: block;
+    width: 3rem;
+    height: 0.15rem;
+    background-color: $light-color;
+    position: absolute;
+    top: -0.5rem;
+    right: 0;
+    content: "";
+}
+
+.header__nav__menu::after {
+    display: block;
+    width: 3rem;
+    height: 0.15rem;
+    background-color: $light-color;
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
+    content: "";
+}
+
+.header__nav__menu--to-hidden {
+    background-color: transparent;
+}
+
+.header__nav__menu--to-hidden::before {
+    animation: menuLeft 0.4s forwards;
+}
+
+.header__nav__menu--to-hidden::after {
+    animation: menuRight 0.4s forwards;
+}
+
+.header__nav__list {
+    text-align: end;
+    margin-right: 1rem;
+    margin-top: 3rem;
+    height: 100%;
+    list-style: none;
+}
+
+.header__nav__list--visible {
+    display: block;
+    animation: animateRight 0.4s 0s;
+}
+
+.header__nav__list--hidden {
+    display: none;
+}
+
+.header__nav__list__element__link {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.header__nav__list__element__link:hover {
+    color: lighten($primary-color, 50%);
     cursor: pointer;
-
-}
-
-.main-content_contact_content_form_wrong {
-    color: #b23849;
-}
-
-.main-content_contact_content_form_good {
-    color: #508600;
-    font-weight: 700;
 }

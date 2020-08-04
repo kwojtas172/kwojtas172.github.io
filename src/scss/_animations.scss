@@ -23,3 +23,16 @@
       }
   }
 
+  @keyframes menuLeft {
+    100% {
+      top: 0.5rem;
+      transform: rotate(-45deg);
+    }
+  }
+
+  @keyframes menuRight {
+    100% {
+      top: 0.5rem;
+      transform: rotate(45deg);
+    }
+  }

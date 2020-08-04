@@ -1,95 +1,26 @@
-import React, { Component } from 'react';
+import React, { useState }  from 'react';
+import { Link } from 'react-scroll';
 
-class Header extends Component {
+export default function Header() {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            myPortf: "",
-            counter: 0,
-            position: "",
-            class: "",
-            display: "",
-            displayHideMenu: "none"
-        }
+    const [display, setDisplay] = useState("header__nav__list--hidden");
+    const [menu, setMenu] = useState("header__nav__menu");
+
+    const showHidden = () => {
+        setDisplay(display==="header__nav__list--visible"?"header__nav__list--hidden":"header__nav__list--visible");
+        setMenu(menu==="header__nav__menu"?"header__nav__menu--to-hidden":"header__nav__menu");
     }
 
-    componentDidMount() {
-        this.toCompleteWord = setInterval(() => {
-                const word = "My portfolio";
-                if(window.innerWidth >=720) {
-                    this.setState({
-                    myPortf: this.state.myPortf + word[this.state.counter],
-                    counter: this.state.counter + 1
-                    })
-                }
-                if(window.innerWidth < 720) {
-                    this.setState({
-                        myPortf: word,
-                        // counter: this.state.counter + 1
-                        });
-                        clearInterval(this.toCompleteWord)
-                }
-                if(word.length === this.state.myPortf.length) {
-                    clearInterval(this.toCompleteWord)
-                }
-            }, 200);
-
-
-            this.handleScroll = () => {
-                this.setState({
-                    position: window.pageYOffset
-                })
-                if(this.state.position > 5) {
-                    this.setState({
-                        class: "fixed"
-                    })
-                } else {
-                    this.setState({
-                        class: ""
-                    })
-                }
-                console.log(this.state.position)
-            }
-
-            this.changeDisplay = () => {
-                this.setState({
-                    display: window.innerWidth < 720 ? "none" : "",
-                    displayHideMenu: window.innerWidth < 720 ? "block" : "none"
-                })
-            }
-
-            window.addEventListener("scroll", this.handleScroll);
-            window.addEventListener('resize', this.changeDisplay);
-        
-    }
-
-        handleClick = () => {
-            this.setState({
-                display: this.state.display === "none" ? "block" : "none"
-            })
-        }
-    
-    render() {
-        return (
-            <header className={`header-wrapper ${this.state.class}`}>
-                <div className="header-wrapper_logo">
-                    <h1 onClick={() => window.scrollTo(0, 0)}>{this.state.myPortf}</h1>
-                    {console.log(window.innerHeight)}
-                </div>
-                <nav className="header-wrapper_nav">
-                    <span className="hide-menu-wrapper" onClick={this.handleClick}>
-                    <span className="hide-menu" style={{display: this.state.displayHideMenu}}></span>
-                    </span>
-                    <ul className="header-wrapper_nav_list" style={{display: this.state.display}}>
-                        <li><a href="#about-me">About me</a></li>
-                        <li><a href="#projects">My projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </header>
-        );
-    }
+    return (
+        <header className="header">
+            <nav className="header__nav">
+                <span className={`header__nav__menu ${menu}`} onClick={showHidden}></span>
+                <ul className={`header__nav__list ${display}`}>
+                    <li className="header__nav__list__element"><Link className="header__nav__list__element__link" to="aboutMe" spy={true} smooth={true} offset={50} duration={500}>About me</Link></li>
+                    <li className="header__nav__list__element"><Link className="header__nav__list__element__link" to="projects">Projects</Link></li>
+                    <li className="header__nav__list__element"><Link className="header__nav__list__element__link" to="contact">Contact</Link></li>
+                </ul>
+            </nav>
+        </header>
+    )
 }
-
-export default Header;
