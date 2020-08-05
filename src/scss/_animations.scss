@@ -60,3 +60,15 @@
       opacity: 1;
     }
   }
+
+  @keyframes toSlideNextThree {
+    100% {
+      transform: translate(-76rem);
+    }
+  }
+
+  @keyframes toSlidePrevThree {
+    100% {
+      transform: translate(76rem);
+    }
+  }

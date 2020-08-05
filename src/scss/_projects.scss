@@ -19,7 +19,16 @@
     background-color: $light-color;
     flex-shrink: 0;
     color: $primary-color;
+    transition: 0.6s;
+
+    @media (min-width: 700px) {
+        width: calc((33% - 8rem));
+        margin-left: 4.5rem;
+        transform: translate(-38rem);
+        
+    }
 }
+
 
 .projects__slider__element--animation-next {
     animation: toSlideNext 0.6s ease-out forwards;
@@ -27,6 +36,14 @@
 
 .projects__slider__element--animation-prev {
     animation: toSlidePrev 0.6s ease-out forwards;
+}
+
+.projects__slider__element--animation-next-three {
+    animation: toSlideNextThree 0.6s ease-out forwards;
+}
+
+.projects__slider__element--animation-prev-three {
+    animation: toSlidePrevThree 0.6s ease-out forwards;
 }
 
 .projects__slider__btn {
