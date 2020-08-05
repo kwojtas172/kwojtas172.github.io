@@ -4,6 +4,10 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+
+    @media (min-width: 700px) {
+        flex-direction: row;
+    }
 }
 
 .about-me__circle {
@@ -41,6 +45,12 @@
     line-height: 2rem;
     font-size: 1.2rem;
     opacity: 0;
+
+    @media (min-width: 700px) {
+        max-width: 30%;
+        margin-top: 0;
+        z-index: 1;
+    }
     
 }
 

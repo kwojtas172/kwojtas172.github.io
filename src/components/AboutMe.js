@@ -50,7 +50,7 @@ export default class AboutMe extends Component {
         this.setState({
             postion: window.pageYOffset
         })
-        if(this.state.postion>350) {
+        if(this.state.postion>250) {
             this.setState({
                 aboutMeClass: "about-me__description about-me__description--animation"
             })
@@ -71,7 +71,7 @@ export default class AboutMe extends Component {
     render() {
         const {width1, width2, width3, rotate1, rotate2, rotate3, aboutMeClass} = this.state;
         return (
-            <section className="about-me">
+            <section className="about-me" id="aboutMe">
             <div className="about-me__circle">
                 <div className="about-me__circle__line" style={{width: `${width1}rem`, transform: `rotate(${rotate1}deg)`}}>
                     <div className="about-me__circle__line-circle" style={{left: `${width1-0.5}rem`}}></div>
@@ -83,7 +83,7 @@ export default class AboutMe extends Component {
                     <div className="about-me__circle__line-circle" style={{left: `${width3-0.5}rem`}}></div>
                 </div>
             </div>
-            <p className={aboutMeClass} id="aboutMe">
+            <p className={aboutMeClass}>
             I am a graduate of Coders Lab and I am looking for a job as a
             programmer Javascript. In programming, I liked the fact that
             problems are not uncommon can be solved in many ways, and

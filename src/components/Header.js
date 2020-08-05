@@ -17,8 +17,8 @@ export default function Header() {
                 <span className={`header__nav__menu ${menu}`} onClick={showHidden}></span>
                 <ul className={`header__nav__list ${display}`}>
                     <li className="header__nav__list__element"><Link className="header__nav__list__element__link" to="aboutMe" spy={true} smooth={true} offset={50} duration={500}>About me</Link></li>
-                    <li className="header__nav__list__element"><Link className="header__nav__list__element__link" to="projects">Projects</Link></li>
-                    <li className="header__nav__list__element"><Link className="header__nav__list__element__link" to="contact">Contact</Link></li>
+                    <li className="header__nav__list__element"><Link className="header__nav__list__element__link" to="projects" spy={true} smooth={true} offset={50} duration={500}>Projects</Link></li>
+                    <li className="header__nav__list__element"><Link className="header__nav__list__element__link" to="contact" spy={true} smooth={true} offset={50} duration={500}>Contact</Link></li>
                 </ul>
             </nav>
         </header>

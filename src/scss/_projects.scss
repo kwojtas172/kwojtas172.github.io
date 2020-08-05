@@ -1,0 +1,48 @@
+.projects {
+    height: 30rem;
+}
+
+.projects__slider {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.projects__slider__element {
+    width: calc(100% - 8rem);
+    height: calc(100% - 8rem);
+    margin: 3rem;
+    margin-left: 4rem;
+    background-color: $light-color;
+    flex-shrink: 0;
+    color: $primary-color;
+}
+
+.projects__slider__element--animation-next {
+    animation: toSlideNext 0.6s ease-out forwards;
+}
+
+.projects__slider__element--animation-prev {
+    animation: toSlidePrev 0.6s ease-out forwards;
+}
+
+.projects__slider__btn {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
+}
+
+.projects__slider__btn--prev {
+    border-right: 1rem solid $light-color;
+    left: 1rem;
+}
+
+.projects__slider__btn--next {
+    border-left: 1rem solid $light-color;
+    right: 1rem;
+}
