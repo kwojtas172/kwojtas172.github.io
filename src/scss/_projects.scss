@@ -2,6 +2,11 @@
     height: 30rem;
 }
 
+.projects__title {
+    text-align: center;
+    color: darken($light-color, 35%)
+}
+
 .projects__slider {
     height: 100%;
     display: flex;

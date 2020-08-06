@@ -1,0 +1,27 @@
+.skills {
+    height: 20rem;
+}
+
+.skills__title {
+    text-align: center;
+    color: darken($light-color, 35%)
+}
+
+.skills__list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-x: auto;
+    list-style: none;
+    height: 100%;
+}
+
+.skills__list__element {
+    margin: 2rem;
+    font-size: 4rem;
+}
+
+.skills__list__element__icon{
+    width: 100%;
+    height: auto;
+} 
