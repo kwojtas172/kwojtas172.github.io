@@ -38,37 +38,3 @@
       transform: rotate(45deg);
     }
   }
-
-  @keyframes toSlideNext {
-    0% {
-      transform: translate(90rem);
-      opacity: 0.3;
-    }
-    100% {
-      transform: translate(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes toSlidePrev {
-    0% {
-      transform: translate(-90rem);
-      opacity: 0.3;
-    }
-    100% {
-      transform: translate(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes toSlideNextThree {
-    100% {
-      transform: translate(-76rem);
-    }
-  }
-
-  @keyframes toSlidePrevThree {
-    100% {
-      transform: translate(76rem);
-    }
-  }
