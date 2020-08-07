@@ -1,9 +1,10 @@
 .about-me {
     display: flex;
-    height: 50rem;
+    height: 40rem;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    background-color: darken($primary-color, 5%);
 
     @media (min-width: 700px) {
         flex-direction: row;
@@ -26,6 +27,7 @@
     left: 0.5rem;
     transform-origin: 0;
     transition: 3s linear;
+    z-index: 0;
 }
 
 .about-me__circle__line-circle {
@@ -40,15 +42,14 @@
 }
 
 .about-me__description {
-    margin-top: 20rem;
     text-align: center;
     line-height: 2rem;
     font-size: 1.2rem;
     opacity: 0;
+    background-color: darken($primary-color, 5%);
 
     @media (min-width: 700px) {
         max-width: 30%;
-        margin-top: 0;
         z-index: 1;
     }
     
