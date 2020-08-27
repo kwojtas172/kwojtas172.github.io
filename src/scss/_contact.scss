@@ -13,6 +13,7 @@
     align-self: flex-start;
     margin: 1rem 3rem;
     color: darken($light-color, 35%);
+    text-align: center;
 }
 
 .contact__info {
@@ -28,45 +29,43 @@
     list-style: none;
     display: flex;
     justify-content: space-evenly;
+    margin-top: -6rem;
+    margin-left: -6rem;
     padding: 2rem;
     width: 100%;
 }
 
 .contact__info__list__element {
-    font-size: 2rem;
     transition: 0.4s;
+    display: flex;
+    flex-direction: column;
 
 }
 
 .contact__info__list__element:hover {
     cursor: pointer;
     transform: scale(1.4);
-    filter: brightness(125%)
 }
 
-.fa-linkedin {
-    color: #0072b1;
-    background-color: #ffffff;
-    border-radius: 50%;
-    width: 95%;
-    height: 1.6rem;
-    line-height: 1.6rem;
+.contact__info__list__element__img {
+    z-index: 1;
+    margin: 0 3rem;
 }
 
-.fa-github-square {
-    color: #211F1F;
-    background-color: #ffffff;
-    width: 95%;
-    // height: 1.6rem;
-    // line-height: 1.6rem;
-    border-radius: 50%;
+.contact__info__list__element__link {
+    opacity: 0;
+    transition: 0.7s;
+    text-decoration: none;
+    color: darken($light-color, 55%);
+    text-align: center;
 }
 
+.contact__info__list__element__link:hover {
+    color: darken($light-color, 25%);
+}
 
-.fa-envelope {
-    color: #B23121;
-    background-color: #ffffff;
-    box-shadow: inset 0.04rem -0.2px 0px 0.24rem $primary-color;
+.contact__info__list__element:hover>.contact__info__list__element__link {
+    opacity: 1;
 }
 
 .contact__form {
@@ -83,7 +82,7 @@
 
 .contact__form__input {
     padding: 1rem;
-    width: 16rem;
+    width: 40rem;
     border: hidden;
     background-color: darken($primary-color, 5%);
     margin: 0.5rem;

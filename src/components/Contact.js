@@ -1,4 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
+import github from "../images/github.png";
+import gmail from "../images/gmail.png";
+import linkedin from "../images/linkedin.png";
 
 export default function Contact() {
     
@@ -19,13 +22,16 @@ export default function Contact() {
             <article className="contact__info">
                 <ul className="contact__info__list">
                     <li className="contact__info__list__element">
-                        <i className="contact__info__list__element fab fa-linkedin"></i>
+                        <img src={linkedin} alt="linkedin-icon" className="contact__info__list__element__img" />
+                        <a href="https://www.linkedin.com/in/kamil-wojtas/" target="_blank" rel="noopener noreferrer" className="contact__info__list__element__link">linkedin profil</a>
                     </li>
                     <li className="contact__info__list__element">
-                        <i className="contact__info__list__element fab fa-github-square"></i>
+                        <img src={github} alt="github-icon" className="contact__info__list__element__img" />
+                        <a href="https://www.github.com/kwojtas172" target="_blank" rel="noopener noreferrer" className="contact__info__list__element__link">github repository</a>
                     </li>
                     <li className="contact__info__list__element">
-                        <i className="contact__info__list__element far fa-envelope"></i>
+                        <img src={gmail} alt="gmail-icon" className="contact__info__list__element__img" />
+                        <a href="mailto:k.wojtas172@gmail.com" className="contact__info__list__element__link">send me e-mail</a>
                     </li>
                 </ul>
             </article>
