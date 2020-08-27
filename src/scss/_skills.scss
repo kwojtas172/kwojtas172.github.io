@@ -1,0 +1,65 @@
+.skills {
+    height: 10rem;
+}
+
+.skills__title {
+    text-align: center;
+    color: darken($light-color, 35%)
+}
+
+.skills__list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-x: auto;
+    list-style: none;
+    height: 100%;
+}
+
+.skills__list__element {
+    margin: 2rem;
+    font-size: 3rem;
+}
+
+.skills__list__element__icon{
+    width: 100%;
+    height: auto;
+} 
+
+.fa-github{
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    color: #211F1F;
+}
+
+.fa-css3-alt {
+    color: linear-gradient(#264de4 50%, #2965f1 50%);
+}
+
+.fa-sass {
+    color: #cc6699;
+}
+
+.fa-js {
+    color: #f0db4f;
+    background-color: #323330;
+}
+
+.fa-react {
+    color: #61DBFB;
+}
+
+.fa-npm {
+    color: #CC3534;
+    background-color: #FFFFFF;
+    background-size: auto;
+    height: 1rem;
+    line-height: 1rem;
+}
+
+.fa-gulp {
+    color: #DB4446;
+    height: 1.5rem;
+    width: 1rem;
+    line-height: 1rem;
+}
