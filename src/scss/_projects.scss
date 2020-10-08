@@ -1,6 +1,12 @@
 .projects {
-    height: 30rem;
+    height: 55rem;
     margin-top: 3rem;
+    width: 100%;
+
+    @media (min-width: 700px) {
+        height: 30rem;
+        
+    }
 }
 
 .projects__title {
@@ -10,6 +16,7 @@
 
 .projects__slider {
     height: 100%;
+    max-width: 100%;
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
@@ -19,42 +26,62 @@
 
 .projects__slider__element {
     width: calc(100% - 8rem);
-    height: calc(100% - 8rem);
+    height: calc((100% - 8rem));
     margin: 3rem;
     margin-left: 4rem;
     background-color: $light-color;
     flex-shrink: 0;
     color: $primary-color;
-    transition: 0.6s;
+    transition: 0.2s;
     position: absolute;
 
     @media (min-width: 700px) {
         width: calc((33% - 8rem));
-        margin-left: 5.5rem;
+        margin-left: 6.25rem;
+        transition: 0.6s;
         
     }
 }
 
 .projects__slider__element--hidden-prev {
-    left: -38rem;
+    left: -304em;
     transition: unset;
+    @media (min-width: 700px) {
+        left: -38rem;
+    }
 }
 
 .projects__slider__element--first-active {
-    left: 0;
+    left: -152rem;
+    @media (min-width: 700px) {
+        left: 0;
+        
+    }
 }
 
 .projects__slider__element--second-active {
-    left: 38rem;
+    left: 0;
+    @media (min-width: 700px) {
+        left: 38rem;
+        
+    }
 }
 
 .projects__slider__element--third-active {
-    left: 76rem;
+    right: -152rem;
+    @media (min-width: 700px) {
+        left: 76rem;
+        
+    }
 }
 
 .projects__slider__element--hidden-next {
-    left: 114rem;
+    right: -304rem;
     transition: unset;
+    @media (min-width: 700px) {
+        left: 114rem;
+        
+    }
 }
 
 .projects__slider__btn {

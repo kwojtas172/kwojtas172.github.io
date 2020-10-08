@@ -8,7 +8,7 @@ export default function Header() {
 
     const showHidden = () => {
         setDisplay(display==="header__nav__list--visible"?"header__nav__list--hidden":"header__nav__list--visible");
-        setMenu(menu==="header__nav__menu"?"header__nav__menu--to-hidden":"header__nav__menu");
+        setMenu(menu==="header__nav__menu"?"header__nav__menu--to-hidden":"");
     }
 
     return (
