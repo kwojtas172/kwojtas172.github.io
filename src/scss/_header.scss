@@ -3,6 +3,8 @@
     font-style: italic;
     width: 70rem;
     margin-bottom: 5rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .header__nav {
@@ -17,7 +19,7 @@
     margin-right: 0.5rem;
     position: absolute;
     top: 1.75rem;
-    right: -80rem;
+    right: -60rem;
 
     @media (min-width: 700px) {
         display: none;
@@ -65,7 +67,7 @@
     height: 100%;
     list-style: none;
     background-color: transparent;
-    margin-right: -20rem;
+    margin-right: 0;
     margin-top: 5rem;
 
 

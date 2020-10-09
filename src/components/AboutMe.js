@@ -49,7 +49,14 @@ export default class AboutMe extends Component {
     handleScroll = () => {
         this.setState({
             postion: window.pageYOffset
-        })
+        });
+        if(window.screen.width < 700) {
+            if(this.state.postion>50) {
+                this.setState({
+                    aboutMeClass: "about-me__description about-me__description--animation"
+                })
+            }
+        }
         if(this.state.postion>250) {
             this.setState({
                 aboutMeClass: "about-me__description about-me__description--animation"
