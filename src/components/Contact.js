@@ -6,9 +6,52 @@ import linkedin from "../images/linkedin.png";
 export default function Contact() {
     
     const [introClass, setIntroClass] = useState("contact__form--intro");
+    const [formName, setFormName] = useState("");
+    const [formEmail, setFormEmail] = useState("");
+    const [formMessage, setFormMessage] = useState("");
+    const [formSummary, setFormSummary] = useState("");
+    const [formSummaryColor, setFormSummaryColor] = useState("");
 
     const changeClass = () => {
         setIntroClass("")
+    }
+
+    const handleFormName = e => {
+        setFormName(e.target.value)
+    }
+
+    const handleFormEmail = e => {
+        setFormEmail(e.target.value)
+    }
+
+    const handleFormMessage = e => {
+        setFormMessage(e.target.value)
+    }
+
+    const formSubmit = e => {
+        e.preventDefault();
+        if(formName.length>2 && formEmail.length>3 && formMessage.length>5) {
+            setFormSummary("Thanks, message has been sent!");
+            setFormSummaryColor("contact__form__summary--success");
+            const data = {name: formName, email: formEmail, message: formMessage}
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+                })
+                .then(response => response.json())
+                .then(data => {
+                console.log('Success:', data);
+                })
+                .catch((error) => {
+                console.error('Error:', error);
+                });
+        } else {
+            setFormSummary("Check your name, your e-mail or your message and correct it, please!");
+            setFormSummaryColor("contact__form__summary--failure");
+        }
     }
 
     useEffect(() => {
@@ -35,10 +78,11 @@ export default function Contact() {
                     </li>
                 </ul>
             </article>
-            <form className="contact__form">
-                <input type="text" className={`contact__form__input ${introClass}`} placeholder="Enter your name" />
-                <input type="e-mail" className={`contact__form__input ${introClass}`} placeholder="Enter your e-mail" />
-                <textarea className={`contact__form__input contact__form__input--text ${introClass}`} placeholder="Enter your message" />
+            <form onSubmit={e => formSubmit(e)} className="contact__form">
+                <p className={`contact__form__summary ${formSummaryColor}`} >{formSummary}</p>
+                <input type="text" value={formName} onChange={e=>handleFormName(e)} className={`contact__form__input ${introClass}`} placeholder="Enter your name" name="name" />
+                <input type="email" value={formEmail} onChange={e=>handleFormEmail(e)} className={`contact__form__input ${introClass}`} placeholder="Enter your e-mail" name="email" />
+                <textarea value={formMessage} onChange={e=>handleFormMessage(e)} className={`contact__form__input contact__form__input--text ${introClass}`} placeholder="Enter your message" name="message" />
                 <input type="submit" className={`contact__form__input contact__form__input--btn ${introClass}`} value="Send" />
             </form>
         </section>
