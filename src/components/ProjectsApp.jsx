@@ -7,7 +7,7 @@ const Section = styled.section`
 `
 
 const Article = styled.article`
-    width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -15,13 +15,13 @@ const Article = styled.article`
 `
 
 const Photo = styled.img`
-    width: 100%;
+    max-width: 100%;
     height: auto;
     transition: 0.4s;
 `
 
 const DescriptionsWrapper = styled.div`
-    width: 100%;
+    max-width: 100%;
     display: none;
     flex-direction: column;
     position: absolute;

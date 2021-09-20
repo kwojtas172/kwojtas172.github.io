@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Header = styled.header`
     display: flex;
     flex-direction: column;
-    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     align-items: center;
     color: #3b3a30;
@@ -14,6 +14,7 @@ const Header = styled.header`
 const Title = styled.h1 `
     margin: 1rem;
     font-size: 2rem;
+    max-width: 100%;
 `
 
 const TitleDescription = styled.p`
@@ -22,7 +23,7 @@ const TitleDescription = styled.p`
     margin-top: 0;
     padding: 0 2rem;
     font-size: 1.2rem;
-    max-width: 700px;
+    max-width: 100%;
     
 `
 
