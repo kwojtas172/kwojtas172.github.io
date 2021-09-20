@@ -20,6 +20,7 @@ const TitleDescription = styled.p`
     text-align: center;
     margin: 2rem auto;
     margin-top: 0;
+    padding: 0 2rem;
     font-size: 1.2rem;
     max-width: 700px;
     
