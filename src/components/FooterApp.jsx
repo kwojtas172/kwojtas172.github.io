@@ -11,13 +11,23 @@ const Footer = styled.footer`
     color: #ffffff;
 `
 
+const Link = styled.a`
+    color: #ffffff;
+`
+
 
 const FooterApp = () => {
     return (
         <Footer>
-            <i className="fab fa-linkedin-in"></i>
-            <i className="fab fa-github"></i>
-            <i className="far fa-envelope"></i>
+            <Link href='https://www.linkedin.com/in/kamil-wojtas/' target='_blank' rel='noreferrer'>
+                <i className="fab fa-linkedin-in"></i>
+            </Link>
+            <Link href='https://github.com/kwojtas172' target='_blank' rel='noreferrer'>
+                <i className="fab fa-github"></i>
+            </Link>
+            <Link href='mailto:kwojtas172@gmail.com' target='_blank' rel='noreferrer'>
+                <i className="far fa-envelope"></i>
+            </Link>
         </Footer>
     );
 }

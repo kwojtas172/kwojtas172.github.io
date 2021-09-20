@@ -5,11 +5,13 @@ import styled from "styled-components";
 const Form = styled.form`
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 2rem 0;
 `
 
 const Input = styled.input`
-    width: 25rem;
+    max-width: 15rem;
     height: 3rem;
     background-color: grey;
     color: #ffffff;
@@ -28,7 +30,7 @@ const Input = styled.input`
 `
 
 const TextArea = styled.textarea`
-    width: 25rem;
+    max-width: 15rem;
     height: 10rem;
     background-color: grey;
     color: #ffffff;
