@@ -24,12 +24,13 @@ const Photo = styled.img`
     transition: 0.4s;
 
     @media (min-width: 720px) {
-        /* max-width: 45rem; */
+        width: 50%;
     }
 `
 
 const DescriptionsWrapper = styled.div`
     max-width: 100%;
+    height: 100%;
     display: none;
     flex-direction: column;
     position: absolute;
@@ -40,8 +41,14 @@ const DescriptionsWrapper = styled.div`
     text-align: center;
 
     @media (min-width: 720px) {
-        max-width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        min-height: 50rem;
         position: static;
+        transform: translateY(0);
     }
 `
 
@@ -55,6 +62,10 @@ const ProjectDescription = styled.p`
     width: 90%;
     color: #ffffff;
     font-weight: 600;
+
+    @media (min-width: 720px) {
+        color: #3b3a30;
+    }
 `
 
 const ProjectsApp = () => {
