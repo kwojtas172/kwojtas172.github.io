@@ -12,12 +12,20 @@ const Article = styled.article`
     flex-direction: column;
     position: relative;
     margin: 1rem 0;
+
+    @media (min-width: 720px) {
+        flex-direction: row;
+    }
 `
 
 const Photo = styled.img`
     max-width: 100%;
     height: auto;
     transition: 0.4s;
+
+    @media (min-width: 720px) {
+        /* max-width: 45rem; */
+    }
 `
 
 const DescriptionsWrapper = styled.div`
@@ -31,8 +39,9 @@ const DescriptionsWrapper = styled.div`
     right: 0;
     text-align: center;
 
-    .visible {
-        display: flex;
+    @media (min-width: 720px) {
+        max-width: 50%;
+        position: static;
     }
 `
 
