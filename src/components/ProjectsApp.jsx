@@ -72,18 +72,34 @@ const ProjectsApp = () => {
 
 
     const showProject = e => {
-        const projectsSection = document.getElementById('projects');
-        const projectsTop = projectsSection.getBoundingClientRect().top
-        if(projectsTop < 120) {
-            const projects = projectsSection.getElementsByTagName('article');
-            const arrOfProjects = Array.prototype.slice.call(projects)
-            arrOfProjects.forEach((project, index) => {
-                if(project.getBoundingClientRect().top < 120) {
-                    projects[index].getElementsByTagName('img')[0].style.filter = 'brightness(25%)'
-                    projects[index].getElementsByTagName('div')[0].style.display = 'flex'
-                }
-            });
-            if(projects[projects.length-1].getElementsByTagName('div')[0].style.display === 'flex') document.removeEventListener('scroll', showProject)
+        // const projectsSection = document.getElementById('projects');
+        // const projectsTop = projectsSection.getBoundingClientRect().top
+        // if(projectsTop < 120) {
+        //     const projects = projectsSection.getElementsByTagName('article');
+        //     const arrOfProjects = Array.prototype.slice.call(projects)
+        //     arrOfProjects.forEach((project, index) => {
+        //         if(project.getBoundingClientRect().top < 120) {
+        //             projects[index].getElementsByTagName('img')[0].style.filter = 'brightness(25%)'
+        //             projects[index].getElementsByTagName('div')[0].style.display = 'flex'
+        //         }
+        //     });
+        //     if(projects[projects.length-1].getElementsByTagName('div')[0].style.display === 'flex') document.removeEventListener('scroll', showProject)
+        // }
+
+        if('IntersectionObserver' in window) {
+            const projects = document.getElementsByTagName('article');
+
+            let config = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+              };
+
+              let observer = new IntersectionObserver(article => {
+                console.log(article)
+              }, config)
+            //   observer.observe(projects)
+            Array.from(projects).forEach(project => observer.observe(project))
         }
     }
 
