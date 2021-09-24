@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
+  body {
+    max-width: 1440px;
+  }
+
   .app {
     font-family: Arial, Helvetica, sans-serif;
   }

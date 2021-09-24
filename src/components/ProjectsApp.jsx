@@ -4,6 +4,7 @@ import arrOfProjects from '../data/projects';
 
 const Section = styled.section`
     width: 100%;
+    background-color: silver;
 `
 
 const Article = styled.article`
@@ -62,6 +63,7 @@ const ProjectDescription = styled.p`
     width: 90%;
     color: #ffffff;
     font-weight: 600;
+    visibility: hidden;
 
     @media (min-width: 720px) {
         color: #3b3a30;
@@ -72,34 +74,19 @@ const ProjectsApp = () => {
 
 
     const showProject = e => {
-        // const projectsSection = document.getElementById('projects');
-        // const projectsTop = projectsSection.getBoundingClientRect().top
-        // if(projectsTop < 120) {
-        //     const projects = projectsSection.getElementsByTagName('article');
-        //     const arrOfProjects = Array.prototype.slice.call(projects)
-        //     arrOfProjects.forEach((project, index) => {
-        //         if(project.getBoundingClientRect().top < 120) {
-        //             projects[index].getElementsByTagName('img')[0].style.filter = 'brightness(25%)'
-        //             projects[index].getElementsByTagName('div')[0].style.display = 'flex'
-        //         }
-        //     });
-        //     if(projects[projects.length-1].getElementsByTagName('div')[0].style.display === 'flex') document.removeEventListener('scroll', showProject)
-        // }
-
-        if('IntersectionObserver' in window) {
-            const projects = document.getElementsByTagName('article');
-
-            let config = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.5
-              };
-
-              let observer = new IntersectionObserver(article => {
-                console.log(article)
-              }, config)
-            //   observer.observe(projects)
-            Array.from(projects).forEach(project => observer.observe(project))
+        const projectsSection = document.getElementById('projects');
+        const projectsTop = projectsSection.getBoundingClientRect().top
+        if(projectsTop < 120) {
+            const projects = projectsSection.getElementsByTagName('article');
+            const arrOfProjects = Array.prototype.slice.call(projects)
+            arrOfProjects.forEach((project, index) => {
+                if(project.getBoundingClientRect().top < 150) {
+                    projects[index].getElementsByTagName('img')[0].style.filter = 'brightness(25%)';
+                    projects[index].getElementsByTagName('div')[0].style.display = 'flex';
+                    projects[index].getElementsByTagName('p')[0].style.visibility = 'visible';
+                }
+            });
+            if(projects[projects.length-1].getElementsByTagName('p')[0].style.visibility === 'visible') document.removeEventListener('scroll', showProject)
         }
     }
 
