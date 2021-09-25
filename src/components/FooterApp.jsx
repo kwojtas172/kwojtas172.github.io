@@ -9,10 +9,17 @@ const Footer = styled.footer`
     height: 5rem;
     background-color: grey;
     color: #ffffff;
+
 `
 
 const Link = styled.a`
     color: #ffffff;
+
+    i {
+        @media (min-width: 720px) {
+            font-size: 2rem;
+    }
+    }
 `
 
 

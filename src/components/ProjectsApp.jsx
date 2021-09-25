@@ -31,7 +31,6 @@ const Photo = styled.img`
 
 const DescriptionsWrapper = styled.div`
     max-width: 100%;
-    height: 100%;
     display: none;
     flex-direction: column;
     position: absolute;
@@ -47,7 +46,7 @@ const DescriptionsWrapper = styled.div`
         align-items: center;
         justify-content: center;
         width: 50%;
-        min-height: 50rem;
+        min-height: 30rem;
         position: static;
         transform: translateY(0);
     }
@@ -57,6 +56,10 @@ const Link = styled.a`
     text-decoration: none;
     color: #ffffff;
     font-weight: 600;
+
+    @media (min-width: 720px) {
+        color: #3b3a30;
+    }
 `
 
 const ProjectDescription = styled.p`
@@ -81,7 +84,7 @@ const ProjectsApp = () => {
             const arrOfProjects = Array.prototype.slice.call(projects)
             arrOfProjects.forEach((project, index) => {
                 if(project.getBoundingClientRect().top < 150) {
-                    projects[index].getElementsByTagName('img')[0].style.filter = 'brightness(25%)';
+                    if(window.innerWidth < 721) projects[index].getElementsByTagName('img')[0].style.filter = 'brightness(25%)';
                     projects[index].getElementsByTagName('div')[0].style.display = 'flex';
                     projects[index].getElementsByTagName('p')[0].style.visibility = 'visible';
                 }
